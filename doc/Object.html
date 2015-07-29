@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>css-colors_3.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-is_url">#is_url</a>
+    
+    <li ><a href="#method-i-parse">#parse</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-is_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_url</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Method to check if str is a URL</p>
+          
+          
+
+          
+          <div class="method-source-code" id="is_url-source">
+            <pre><span class="ruby-comment"># File css-colors_3.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_url</span>(<span class="ruby-identifier">str</span>)
+        <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">str</span>)
+        (<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;http&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;https&quot;</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidURIError</span>
+        <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_url-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(infile, infileName)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File css-colors_3.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">infile</span>, <span class="ruby-identifier">infileName</span>)
+  <span class="ruby-identifier">outfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">ARGV</span>[<span class="ruby-value">1</span>], <span class="ruby-string">&#39;w+&#39;</span>)
+
+  <span class="ruby-comment"># Define regex for hexadecimal number</span>
+  <span class="ruby-identifier">regex</span> = <span class="ruby-node">/#\h{3,6}/</span>
+  <span class="ruby-identifier">colors</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-comment"># Read each line, find all matches</span>
+  <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">regex</span>)
+    <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hex</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">hex</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
+        <span class="ruby-identifier">hex</span> = <span class="ruby-node">&quot;#&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hex</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hex</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">*</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hex</span>[<span class="ruby-value">3</span>]<span class="ruby-operator">*</span><span class="ruby-value">2</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># Convert each match to a symbol</span>
+      <span class="ruby-identifier">hex</span>.<span class="ruby-identifier">to_sym</span>
+      <span class="ruby-comment"># Add to hash table or increment frequency</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">hex</span>)
+        <span class="ruby-identifier">colors</span>[<span class="ruby-identifier">hex</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">colors</span>[<span class="ruby-identifier">hex</span>] = <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    }
+  }
+
+  <span class="ruby-comment"># Sort in descending order</span>
+  <span class="ruby-identifier">colors</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">colors</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span> }.<span class="ruby-identifier">reverse</span>]
+
+  <span class="ruby-comment"># Boiler plate output</span>
+  <span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">write</span>(
+  <span class="ruby-node">&quot;&lt;!DOCTYPE html&gt;
+  &lt;html lang=\&quot;en\&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=\&quot;utf-8\&quot;/&gt;
+      &lt;title&gt;Stylesheet Colors&lt;/title&gt;
+      &lt;style&gt;
+        body {
+          font-family: \&quot;Helvetica Neue\&quot;, Helvetica, Arial, sans-serif;
+          color: #333;
+        }
+        h1 {
+          font-size: 40px;
+          font-weight: 300;
+          margin: 36px 8px 8px 8px;
+          color: #333;
+        }
+        h2 {
+          margin: 0 8px 20px 8px;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        h2 a {
+          color: #999 !important;
+          text-decoration: none;
+        }
+        h2 a:hover {
+          text-decoration: underline;
+        }
+        .color {
+          height: 200px;
+          width: 200px;
+          float: left;
+          margin: 10px;
+          border: 1px solid #000; 
+          position: relative;
+          -webkit-box-shadow: 0 0 10px #eee; 
+          -moz-box-shadow: 0 0 10px #eee; 
+          box-shadow: 0 0 10px #eee; 
+        }
+        .color:hover {
+          -webkit-box-shadow: 0 0 10px #666; 
+          -moz-box-shadow: 0 0 10px #666; 
+          box-shadow: 0 0 10px #666; 
+        }
+        .info {
+          background-color: #fff;
+          background-color: rgba(255,255,255,.5);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 5px;
+          border-top: 1px solid #000;
+          font-size: 12px;
+          text-align: right;
+        }
+        .rgb {
+          float: left;
+        }
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Stylesheet Colors&lt;/h1&gt;
+        &lt;h2&gt;&lt;a href=\&quot;#{infileName}\&quot;&gt;#{infileName}&lt;/a&gt;&lt;/h2&gt;
+        &quot;</span>)
+
+  <span class="ruby-comment"># Output each Hex/RGB div</span>
+  <span class="ruby-identifier">colors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Convert hex into RGB values</span>
+    <span class="ruby-identifier">r</span>=(<span class="ruby-identifier">k</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">k</span>[<span class="ruby-value">2</span>]).<span class="ruby-identifier">hex</span>
+    <span class="ruby-identifier">g</span>=(<span class="ruby-identifier">k</span>[<span class="ruby-value">3</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">k</span>[<span class="ruby-value">4</span>]).<span class="ruby-identifier">hex</span>
+    <span class="ruby-identifier">b</span>=(<span class="ruby-identifier">k</span>[<span class="ruby-value">5</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">k</span>[<span class="ruby-value">6</span>]).<span class="ruby-identifier">hex</span>
+    <span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;
+    &lt;div class=\&quot;color\&quot; style=\&quot;background-color: #{k}\&quot;&gt;
+    &lt;div class=\&quot;info\&quot;&gt;
+      &lt;div class=\&quot;rgb\&quot;&gt;
+        RGB: #{r}, #{g}, #{b}
+      &lt;/div&gt;
+      &lt;div class=\&quot;hex\&quot;&gt;
+        Hex: #{k}
+      &lt;/div&gt;
+      &lt;!-- #{v} occurrence(s) --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;&quot;</span>)
+  }
+
+  <span class="ruby-comment"># Output EOF</span>
+  <span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&#39;
+    &lt;/body&gt;
+  &lt;/html&gt;&#39;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_url</span>(<span class="ruby-identifier">infileName</span>)
+    <span class="ruby-identifier">infile</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">outfile</span>.<span class="ruby-identifier">close</span>
+
+  <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

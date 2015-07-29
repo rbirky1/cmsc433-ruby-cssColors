@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["object","is_url()","parse()"],"longSearchIndex":["object","object#is_url()","object#parse()"],"info":[["Object","","Object.html","",""],["is_url","Object","Object.html#method-i-is_url","(str)","<p>Method to check if str is a URL\n"],["parse","Object","Object.html#method-i-parse","(infile, infileName)",""]]}}
